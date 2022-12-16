@@ -3,7 +3,7 @@ import pandas as pd
 import json
 
 # Provide the mongodb localhost url to connect python to mongodb.
-client = pymongo.MongoClient("mongodb://localhost:27017")
+client = pymongo.MongoClient(mongo_db_url)
 
 DATA_FILE_PATH = "aps_failure_training_set1.csv"
 # Database Name

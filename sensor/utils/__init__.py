@@ -8,7 +8,7 @@ def get_collection_as_dataframe(database_name:str,collection_name:str)->pd.DataF
     This function return collection as dataframe
     database_name : database name
     """
-
+    
     try:
         logging.info(f"reading data from database")
         df = DataFrame(list(mongo_client[database_name][collection_name].find()))
