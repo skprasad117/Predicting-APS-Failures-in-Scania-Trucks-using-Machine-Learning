@@ -2,6 +2,7 @@ import pandas as pd
 from sensor.config import mongo_client
 from sensor.logger import logging
 from sensor.exception import SensorException
+import sys,os
 
 def get_collection_as_dataframe(database_name:str,collection_name:str)->pd.DataFrame:
     """
@@ -11,7 +12,7 @@ def get_collection_as_dataframe(database_name:str,collection_name:str)->pd.DataF
     
     try:
         logging.info(f"reading data from database")
-        df = DataFrame(list(mongo_client[database_name][collection_name].find()))
+        df = pd.DataFrame(list(mongo_client[database_name][collection_name].find()))
         logging.info(f"Found Columns : {df.columns}")
         if "_id" in df.columns:
             logging.info(f"Dropping Column : _id")
