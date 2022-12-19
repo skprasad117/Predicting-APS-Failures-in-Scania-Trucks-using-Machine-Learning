@@ -22,7 +22,7 @@ class DataIngestion:
             df:pd.DataFrame = utils.get_collection_as_dataframe(
                 database_name = self.data_ingestion_config.database_name, 
                 collection_name = self.data_ingestion_config.collection_name)
-            # save data in feature store
+            # replace na with NAN
             logging.info("save data in feature store")
             df.replace(to_replace = "na",value=np.NAN,inplace = True)
 
