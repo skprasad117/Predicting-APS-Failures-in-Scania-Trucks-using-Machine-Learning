@@ -40,7 +40,7 @@ class ModelTrainer:
             
             logging.info(f"Splitting input and target feature from both train and test arr.")
             x_train,y_train = train_arr[:,:-1],train_arr[:,-1]
-            x_test,y_test = test_arr[:,:-1],train_arr[:,-1]
+            x_test,y_test = test_arr[:,:-1],test_arr[:,-1]
 
             logging.info(f"Train the model")
             model = self.train_model(x=x_train,y=y_train)
@@ -50,9 +50,9 @@ class ModelTrainer:
             f1_train_score  =f1_score(y_true=y_train, y_pred=yhat_train)
 
             logging.info(f"Calculating f1 test score")
-            yhat_test = model.predict(x_train)
+            yhat_test = model.predict(x_test)
             f1_test_score  =f1_score(y_true=y_test, y_pred=yhat_test)
-
+            
             logging.info(f"train score:{f1_train_score} and tests score {f1_test_score}")
             #check for overfitting or underfiiting or expected score
             logging.info(f"Checking if our model is underfitting or not")
