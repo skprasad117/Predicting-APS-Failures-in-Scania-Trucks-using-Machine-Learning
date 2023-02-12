@@ -2,8 +2,9 @@ import pymongo
 import pandas as pd
 import json
 
+from sensor.config import mongo_client
 # Provide the mongodb localhost url to connect python to mongodb.
-client = pymongo.MongoClient(mongo_db_url)
+
 
 DATA_FILE_PATH = "aps_failure_training_set1.csv"
 # Database Name
@@ -21,4 +22,4 @@ if __name__ == "__main__":
     json_record = list(json.loads(df.T.to_json()).values())
     print(json_record[0])
     # insert command to mongoDB
-    client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
+    mongo_client[DATABASE_NAME][COLLECTION_NAME].insert_many(json_record)
