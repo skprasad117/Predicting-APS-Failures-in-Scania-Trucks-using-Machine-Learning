@@ -1,9 +1,9 @@
 import pymongo
 import pandas as pd
-import json
+import json 
 
 from sensor.config import mongo_client
-# Provide the mongodb localhost url to connect python to mongodb.
+# Provide the mongodb localhost url to connect python to mongodb
 
 
 DATA_FILE_PATH = "aps_failure_training_set1.csv"
