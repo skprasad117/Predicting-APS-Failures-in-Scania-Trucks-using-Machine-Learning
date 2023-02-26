@@ -2,7 +2,7 @@ from sensor.pipeline.training_pipeline import start_training_pipeline
 from sensor.pipeline.batch_prediction import start_batch_prediction
 
 file_path = "aps_failure_training_set1.csv"
-
+# comment to just trigger actions
 if __name__=="__main__":
     try:
         start_training_pipeline()
