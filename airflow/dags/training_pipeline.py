@@ -1,4 +1,4 @@
-from asyncio import tasks 
+from asyncio import tasks
 import json
 from textwrap import dedent
 import pendulum
@@ -8,7 +8,7 @@ from airflow.operators.python import PythonOperator
 
 with DAG(
     'sensor_training',
-    default_argsc={'retries' : 2},
+    default_args={'retries' : 2},
     description = "Sensor Fault Detection",
     schedule_interval = "@weekly",
     start_date = pendulum.datetime(2022, 12, 11, tz="UTC"),
