@@ -11,7 +11,7 @@ with DAG(
     default_args={'retries' : 2},
     description = "Sensor Fault Detection",
     schedule_interval = "@weekly",
-    start_date = pendulum.datetime(2022, 12, 11, tz="UTC"),
+    start_date = pendulum.datetime(2023, 04, 17, tz="UTC"),
     catchup = False,
     tags = ['example'],
     
